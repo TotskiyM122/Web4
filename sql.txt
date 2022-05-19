@@ -1,0 +1,19 @@
+CREATE TABLE human(
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+name varchar(128) NOT NULL DEFAULT 'Name',
+email varchar(128) NOT NULL UNIQUE,
+year varchar(32) NOT NULL,
+gender varchar(32) NOT NULL,
+limbs varchar(32) NOT NULL DEFAULT '4',
+bio TEXT NOT NULL DEFAULT 'bio',
+PRIMARY KEY(id));
+
+
+
+CREATE TABLE superability(
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+human_id int(10) unsigned NOT NULL,
+name_of_superability varchar(128) NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY(human_id)
+REFERENCES human(Id));
